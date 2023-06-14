@@ -33,9 +33,7 @@ export const usersSlice = createSlice({
         state.list = state.list.concat(payload).map(it => {
           const result = it;
           const { firstName = '', lastName = '' } = it
-          delete result.firstName;
-          delete result.lastName;
-          result.name = `${firstName} ${lastName}`.trim();
+          result.name = firstName ? firstName : lastName;
           return result;
         });
         state.status = API_STATUS.FULFILLED;

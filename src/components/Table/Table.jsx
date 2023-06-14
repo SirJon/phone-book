@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+
+import Menu from "@/components/Menu/Menu";
+
 import TableData from "./components/TableData/TableData";
 
 const Table = ({ data = [] }) => {
@@ -26,7 +29,7 @@ const Table = ({ data = [] }) => {
             : -1 * returnValue
         }
       });
-    setUserData(resultData)
+    setUserData(resultData);
     setFieldState(field);
   };
 
@@ -35,7 +38,7 @@ const Table = ({ data = [] }) => {
       <thead>
         <tr>
           <td>
-            <button>Открыть меню</button>
+            <Menu />
           </td>
           <td onClick={() => sortDate('name')}>Имя</td>
           <td onClick={() => sortDate('phone')}>Телефон</td>
