@@ -7,10 +7,10 @@ const Header = () => {
     dispatch(setSort(e.target.value))
   };
   return (
-    <header>
-      <input type="text" placeholder="Поиск" onChange={handlerSort} />
+    <header className="header">
+      <input className="header__input" type="text" placeholder="Поиск" onChange={handlerSort} />
     </header>
-  )
-}
+  );
+};
 
 export default Header

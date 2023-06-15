@@ -16,16 +16,16 @@ const TableData = (props) => {
 
   return (
     <>
-      <tr onClick={handleClickOpen}>
+      <tr onClick={handleClickOpen} className="table__tr">
         <td>
-          <img width="40px" height="40px" src={avatar} alt={name} />
+          <img className='table__img' src={avatar} alt={name} />
         </td>
         <td>{name}</td>
-        <td>{phone}</td>
+        <td className='bold'>{phone}</td>
         <td>{address}</td>
         <td>{email}</td>
         <td>
-          <button>Редактировать</button>
+          <button className='table__button--edit bold'>Редактировать</button>
         </td>
       </tr>
       <EditUser

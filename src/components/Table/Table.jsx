@@ -43,20 +43,20 @@ const Table = ({ data = [] }) => {
   };
 
   return (
-    <table border="1px">
-      <thead>
-        <tr>
+    <table className="table" >
+      <thead className="table__head">
+        <tr className="table__tr">
           <td>
             <Menu />
           </td>
-          <td onClick={() => sortDate('name')}>Имя</td>
-          <td onClick={() => sortDate('phone')}>Телефон</td>
-          <td onClick={() => sortDate('address')}>Адрес</td>
-          <td onClick={() => sortDate('email')}>Электронная почта</td>
-          <td>Редактировать</td>
+          <td className="ns-resize" onClick={() => sortDate('name')}>Имя</td>
+          <td className="bold ns-resize" onClick={() => sortDate('phone')}>Телефон</td>
+          <td className="ns-resize" onClick={() => sortDate('address')}>Адрес</td>
+          <td className="ns-resize" onClick={() => sortDate('email')}>Электронная почта</td>
+          <td></td>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="table__body">
         {userData.map(it => (
           <TableData key={it.id} {...it} />
         ))}

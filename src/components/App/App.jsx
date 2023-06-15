@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="main">
         <Table data={listSort} />
       </main>
     </>

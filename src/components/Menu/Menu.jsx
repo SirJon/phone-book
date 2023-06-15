@@ -24,9 +24,9 @@ const Menu = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleClickOpen}>
-        Меню
+    <div className='menu'>
+      <button className='menu__button' onClick={handleClickOpen}>
+        <span className='visually-hidden'>Меню</span>
       </button>
       <Dialog
         open={open}

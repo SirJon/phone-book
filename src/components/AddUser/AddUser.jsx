@@ -22,46 +22,56 @@ const AddUser = ({ open, handleClose }) => {
 
   return (
     <Dialog
+      className="form"
       open={open}
       onClose={handleClose}
     >
-      <DialogContent>
-        <span>Добавить пользователя</span>
-        <img width="50px" height="50px" src={avatar} alt="avatar" />
+      <DialogContent className="form__content">
+        <span className="form__title bold">Добавить пользователя</span>
+        <img className="form__avatar" src={avatar} alt="avatar" />
         <form
+          className="form__form"
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
+            className="form__input"
             type="text"
             placeholder='Имя'
             {...register('name', { required: true })}
           />
           <input
+            className="form__input"
             type="text"
             placeholder='Номер'
             {...register('phone')}
           />
           <input
+            className="form__input"
             type="text"
             placeholder='Электронная почта'
             {...register('email')}
           />
           <input
+            className="form__input"
             type="text"
             placeholder='Адрес'
             {...register('address')}
           />
-          <button
-            type="submit"
-          >
-            Сохранить
-          </button>
-          <button
-            type='button'
-            onClick={handleClose}
-          >
-            Отмена
-          </button>
+          <div className="form__wrapper--buttons">
+            <button
+              className="form__button bold"
+              type="submit"
+            >
+              Сохранить
+            </button>
+            <button
+              className="form__button bold"
+              type='button'
+              onClick={handleClose}
+            >
+              Отмена
+            </button>
+          </div>
         </form>
       </DialogContent>
     </Dialog>

@@ -1,0 +1,58 @@
+.table {
+  width: 100%;
+  position: relative;
+  margin: 0 auto 40px;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  td {
+    padding: 10px;
+  }
+}
+
+.table__head {
+  position: sticky;
+  top: $header-height;
+  left: 0;
+  z-index: 10;
+
+  background: $white;
+  box-shadow: 0px 9px 7px -1px rgba(34, 60, 80, 0.2);
+  td {
+    padding: 15px;
+  }
+}
+
+.table__body {
+  .table__tr {
+    background: $white;
+    cursor: pointer;
+
+    &:nth-child(2n + 1) {
+      background: rgb(246, 246, 255);
+    };
+
+    &:focus,
+    &:hover {
+      background: rgb(205, 205, 242);
+      .table__button--edit {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.table__button--edit{
+  cursor: pointer;
+  opacity: 0;
+  background: $white;
+  border-radius: 7px;
+  padding: 8px 10px;
+  border: none;
+  color: $blue;
+}
+
+.table__img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

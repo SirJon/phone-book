@@ -1,0 +1,35 @@
+.header {
+  background: $blue;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: $header-height;
+  box-sizing: border-box;
+}
+
+.header__input {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 7px 15px;
+  width: 300px;
+  background: rgba(48, 95, 182, 0.424);
+  color: $white;
+  opacity: 1;
+  &::placeholder {
+    color: $white;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $white;
+    opacity: 1;
+  }
+
+  &::-ms-input-placeholder {
+    color: $white;
+    opacity: 1;
+  }
+}

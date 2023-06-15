@@ -20,46 +20,56 @@ const EditUser = (props) => {
   };
   return (
     <Dialog
+      className="form"
       open={open}
       onClose={handleClose}
     >
-      <DialogContent>
-        <span>Редактировать пользователя</span>
-        <img width="50px" height="50px" src={avatar} alt={name} />
+      <DialogContent className="form__content">
+        <span className="form__title bold">Редактировать пользователя</span>
+        <img className="form__avatar" src={avatar} alt={name} />
         <form
+          className="form__form"
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
+            className="form__input"
             type="text"
             defaultValue={name}
             {...register('name', { required: true })}
           />
           <input
+            className="form__input"
             type="text"
             defaultValue={phone}
             {...register('phone')}
           />
           <input
+            className="form__input"
             type="text"
             defaultValue={email}
             {...register('email')}
           />
           <input
+            className="form__input"
             type="text"
             defaultValue={address}
             {...register('address')}
           />
-          <button
-            type="submit"
-          >
-            Сохранить
-          </button>
-          <button
-            type='button'
-            onClick={handleClose}
-          >
-            Отмена
-          </button>
+          <div className="form__wrapper--buttons">
+            <button
+              className="form__button bold"
+              type="submit"
+            >
+              Сохранить
+            </button>
+            <button
+              className="form__button bold"
+              type='button'
+              onClick={handleClose}
+            >
+              Отмена
+            </button>
+          </div>
         </form>
       </DialogContent>
     </Dialog>

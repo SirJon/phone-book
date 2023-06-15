@@ -1,0 +1,22 @@
+.menu__button {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    background: $blue;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    box-shadow: 0 15px 0 0 $blue, 8px 8px 0 0 $blue, -8px 8px 0 0 $blue;
+  }
+}
