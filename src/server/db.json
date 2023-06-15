@@ -6,7 +6,8 @@
       "avatar": "https://robohash.org/Terry",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "atuny0@sohu.com",
-      "phone": "+63 791 675 8914"
+      "phone": "+63 791 675 8914",
+      "open": true
     },
     {
       "id": 2,

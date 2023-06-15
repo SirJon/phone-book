@@ -19,10 +19,18 @@ export const fetchUsersFind = createAsyncThunk(
   }
 );
 
-export const fetchUsersEdit = createAsyncThunk(
-  'users/fetchUsersEdit',
+export const fetchUserEdit = createAsyncThunk(
+  'users/fetchUserEdit',
   async (data) => {
     const response = await UsersAPIService.update(data);
+    return response;
+  }
+);
+
+export const fetchUserCreate = createAsyncThunk(
+  'users/fetchUserCreate',
+  async (data) => {
+    const response = await UsersAPIService.create(data);
     return response;
   }
 );
@@ -47,16 +55,17 @@ export const usersSlice = createSlice({
         state.errors = payload;
       })
 
-      .addCase(fetchUsersEdit.pending, (state) => {
-      })
-      .addCase(fetchUsersEdit.fulfilled, (state, { payload }) => {
+      .addCase(fetchUserEdit.fulfilled, (state, { payload }) => {
         state.list = state.list
           .map(it => {
             if (it.id === payload.id) return payload
             return it
           })
       })
-      .addCase(fetchUsersEdit.rejected, (state, { payload }) => {
+
+      .addCase(fetchUserCreate.fulfilled, (state, { payload }) => {
+        state.list = state.list
+          .concat(payload)
       })
   },
 });

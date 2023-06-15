@@ -1,45 +1,38 @@
 import { useState } from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
 import EditUser from '@/components/EditUser/EditUser';
 
 
 const TableData = (props) => {
-  const { id, name, phone, avatar, address, email } = props;
+  const { name, phone, avatar, address, email } = props;
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = () => { 
+  const handleClose = () => {
     setOpen(false);
   };
 
   return (
     <>
-      <tr>
-        <td onClick={handleClickOpen}>
+      <tr onClick={handleClickOpen}>
+        <td>
           <img width="40px" height="40px" src={avatar} alt={name} />
         </td>
-        <td onClick={handleClickOpen}>{name}</td>
-        <td onClick={handleClickOpen}>{phone}</td>
-        <td onClick={handleClickOpen}>{address}</td>
-        <td onClick={handleClickOpen}>{email}</td>
+        <td>{name}</td>
+        <td>{phone}</td>
+        <td>{address}</td>
+        <td>{email}</td>
         <td>
-          <EditUser
-            {...props}
-          />
+          <button>Редактировать</button>
         </td>
       </tr>
-      <Dialog
+      <EditUser
+        {...props}
         open={open}
-        onClose={handleClose}
-      >
-        <DialogContent>
-          {id}
-        </DialogContent>
-      </Dialog>
+        handleClose={handleClose}
+      />
     </>
   )
 };

@@ -13,6 +13,15 @@ const Menu = () => {
   const handleClose = () => {
     setOpen(false);
   };
+  const [openUser, setOpenuser] = useState(false);
+
+  const handleClickOpenUser = () => {
+    setOpenuser(true);
+  };
+
+  const handleCloseUser = () => {
+    setOpenuser(false);
+  };
 
   return (
     <div>
@@ -24,12 +33,19 @@ const Menu = () => {
         onClose={handleClose}
       >
         <DialogContent>
-          <AddUser onClick={handleClose}/>
+
+          <button onClick={() => {
+            handleClickOpenUser();
+            handleClose();
+          }}>
+            Добавить пользователя
+          </button>
           <button>Импортировать контакты</button>
           <button>Экспортировать контакты</button>
           <button>Редкактировать список</button>
         </DialogContent>
       </Dialog>
+      <AddUser open={openUser} handleClose={handleCloseUser} />
     </div>
   );
 };
