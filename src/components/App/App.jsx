@@ -7,7 +7,16 @@ import { useEffect } from "react";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { list, status } = useSelector(state => state.user);
+  const { list, status, sort } = useSelector(state => state.user);
+  const listSort = list
+    .concat()
+    .filter(it =>
+      String(it.id).includes(sort) ||
+      String(it.name).includes(sort) ||
+      String(it.address).includes(sort) ||
+      String(it.phone).replace(/ /g,'').includes(sort) ||
+      String(it.email).includes(sort)
+    )
   useEffect(() => {
     dispatch(fetchUsersFind());
   }, [])
@@ -15,7 +24,7 @@ const App = () => {
     <>
       <Header />
       <main>
-        <Table data={list} />
+        <Table data={listSort} />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ const initialState = {
   list: [],
   status: API_STATUS.PENDING,
   errors: null,
+  sort: '',
 };
 
 const nameSlice = 'users';
@@ -38,7 +39,11 @@ export const fetchUserCreate = createAsyncThunk(
 export const usersSlice = createSlice({
   name: nameSlice,
   initialState,
-  reducers: {},
+  reducers: {
+    setSort: (state, { payload }) => {
+      state.sort = payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUsersFind.pending, (state) => {
@@ -70,6 +75,6 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { } = usersSlice.actions;
+export const { setSort } = usersSlice.actions;
 
 export default usersSlice.reducer;

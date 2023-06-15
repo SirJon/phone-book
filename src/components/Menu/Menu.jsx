@@ -33,11 +33,12 @@ const Menu = () => {
         onClose={handleClose}
       >
         <DialogContent>
-
-          <button onClick={() => {
-            handleClickOpenUser();
-            handleClose();
-          }}>
+          <button
+            onClick={() => {
+              handleClickOpenUser();
+              handleClose();
+            }}
+          >
             Добавить пользователя
           </button>
           <button>Импортировать контакты</button>

@@ -15,7 +15,8 @@
       "avatar": "https://robohash.org/Sheldon",
       "address": "",
       "email": "hbingley1@plala.or.jp",
-      "phone": "+7 813 117 7139"
+      "phone": "+7 813 117 7139",
+      "open": true
     },
     {
       "id": 3,
@@ -143,7 +144,8 @@
       "avatar": "https://robohash.org/Arely",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "sberminghamh@chron.com",
-      "phone": "+55 886 766 8617"
+      "phone": "+55 886 766 8617",
+      "open": true
     },
     {
       "id": 19,
