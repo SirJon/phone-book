@@ -10,7 +10,16 @@ const Table = ({ data = [] }) => {
   const [returnValue, setReturnValue] = useState(-1);
 
   useEffect(() => {
-    setUserData(data)
+    const sortData = fieldState === ''
+      ? data
+      : data
+        .concat()
+        .sort((a, b) => {
+          return a[fieldState] > b[fieldState]
+            ? -1 * returnValue
+            : 1 * returnValue
+        })
+    setUserData(sortData);
   }, [data]);
 
   const sortDate = (field) => {

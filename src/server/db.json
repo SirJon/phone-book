@@ -2,8 +2,7 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Terry",
-      "lastName": "",
+      "name": "Terry Poper",
       "avatar": "https://robohash.org/Terry",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "atuny0@sohu.com",
@@ -11,8 +10,7 @@
     },
     {
       "id": 2,
-      "firstName": "",
-      "lastName": "Quigley",
+      "name": "Quigley",
       "avatar": "https://robohash.org/Sheldon",
       "address": "",
       "email": "hbingley1@plala.or.jp",
@@ -20,8 +18,7 @@
     },
     {
       "id": 3,
-      "firstName": "Terrill",
-      "lastName": "Hills",
+      "name": "Terrill Hills",
       "avatar": "https://robohash.org/Terrill",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "",
@@ -29,8 +26,7 @@
     },
     {
       "id": 4,
-      "firstName": "Miles",
-      "lastName": "Cummerata",
+      "name": "Miles Cummerata",
       "avatar": "https://robohash.org/Miles",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "yraigatt3@nature.com",
@@ -38,8 +34,7 @@
     },
     {
       "id": 5,
-      "firstName": "Mavis",
-      "lastName": "Schultz",
+      "name": "Mavis Schultz",
       "avatar": "https://robohash.org/Mavis",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "kmeus4@upenn.edu",
@@ -47,8 +42,7 @@
     },
     {
       "id": 6,
-      "firstName": "Alison",
-      "lastName": "Reichert",
+      "name": "Alison Reichert",
       "avatar": "https://robohash.org/Alison",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "jtreleven5@nhs.uk",
@@ -56,8 +50,7 @@
     },
     {
       "id": 7,
-      "firstName": "Oleta",
-      "lastName": "Abbott",
+      "name": "Oleta Abbott",
       "avatar": "https://robohash.org/Oleta",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "dpettegre6@columbia.edu",
@@ -65,8 +58,7 @@
     },
     {
       "id": 8,
-      "firstName": "Ewell",
-      "lastName": "Mueller",
+      "name": "Ewell Mueller",
       "avatar": "https://robohash.org/Ewell",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "ggude7@chron.com",
@@ -74,8 +66,7 @@
     },
     {
       "id": 9,
-      "firstName": "Demetrius",
-      "lastName": "Corkery",
+      "name": "Demetrius Corkery",
       "avatar": "https://robohash.org/Demetrius",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "nloiterton8@aol.com",
@@ -83,8 +74,7 @@
     },
     {
       "id": 10,
-      "firstName": "Eleanora",
-      "lastName": "Price",
+      "name": "Eleanora Price",
       "avatar": "https://robohash.org/Eleanora",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "umcgourty9@jalbum.net",
@@ -92,8 +82,7 @@
     },
     {
       "id": 11,
-      "firstName": "Marcel",
-      "lastName": "Jones",
+      "name": "Marcel Jones",
       "avatar": "https://robohash.org/Marcel",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "acharlota@liveinternet.ru",
@@ -101,8 +90,7 @@
     },
     {
       "id": 12,
-      "firstName": "Assunta",
-      "lastName": "Rath",
+      "name": "Assunta Rath",
       "avatar": "https://robohash.org/Assunta",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "rhallawellb@dropbox.com",
@@ -110,8 +98,7 @@
     },
     {
       "id": 13,
-      "firstName": "Trace",
-      "lastName": "Douglas",
+      "name": "Trace Douglas",
       "avatar": "https://robohash.org/Trace",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "lgribbinc@posterous.com",
@@ -119,8 +106,7 @@
     },
     {
       "id": 14,
-      "firstName": "Enoch",
-      "lastName": "Lynch",
+      "name": "Enoch Lynch",
       "avatar": "https://robohash.org/Enoch",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "mturleyd@tumblr.com",
@@ -128,8 +114,7 @@
     },
     {
       "id": 15,
-      "firstName": "Jeanne",
-      "lastName": "Halvorson",
+      "name": "Jeanne Halvorson",
       "avatar": "https://robohash.org/Jeanne",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "kminchelle@qq.com",
@@ -137,8 +122,7 @@
     },
     {
       "id": 16,
-      "firstName": "Trycia",
-      "lastName": "Fadel",
+      "name": "Trycia Fadel",
       "avatar": "https://robohash.org/Trycia",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "dpierrof@vimeo.com",
@@ -146,8 +130,7 @@
     },
     {
       "id": 17,
-      "firstName": "Bradford",
-      "lastName": "Prohaska",
+      "name": "Bradford Prohaska",
       "avatar": "https://robohash.org/Bradford",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "vcholdcroftg@ucoz.com",
@@ -155,8 +138,7 @@
     },
     {
       "id": 18,
-      "firstName": "Arely",
-      "lastName": "Skiles",
+      "name": "Arely Skiles",
       "avatar": "https://robohash.org/Arely",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "sberminghamh@chron.com",
@@ -164,8 +146,7 @@
     },
     {
       "id": 19,
-      "firstName": "Gust",
-      "lastName": "Purdy",
+      "name": "Gust Purdy",
       "avatar": "https://robohash.org/Gust",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "bleveragei@so-net.ne.jp",
@@ -173,8 +154,7 @@
     },
     {
       "id": 20,
-      "firstName": "Lenna",
-      "lastName": "Renner",
+      "name": "Lenna Renner",
       "avatar": "https://robohash.org/Lenna",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "aeatockj@psu.edu",
@@ -182,8 +162,7 @@
     },
     {
       "id": 21,
-      "firstName": "Doyle",
-      "lastName": "Ernser",
+      "name": "Doyle Ernser",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "ckensleyk@pen.io",
@@ -191,8 +170,7 @@
     },
     {
       "id": 22,
-      "firstName": "Tressa",
-      "lastName": "Weber",
+      "name": "Tressa Weber",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "froachel@howstuffworks.com",
@@ -200,8 +178,7 @@
     },
     {
       "id": 23,
-      "firstName": "Felicity",
-      "lastName": "O'Reilly",
+      "name": "Felicity O'Reilly",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "beykelhofm@wikispaces.com",
@@ -209,8 +186,7 @@
     },
     {
       "id": 24,
-      "firstName": "Jocelyn",
-      "lastName": "Schuster",
+      "name": "Jocelyn Schuster",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "brickeardn@fema.gov",
@@ -218,8 +194,7 @@
     },
     {
       "id": 25,
-      "firstName": "Edwina",
-      "lastName": "Ernser",
+      "name": "Edwina Ernser",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "dfundello@amazon.co.jp",
@@ -227,8 +202,7 @@
     },
     {
       "id": 26,
-      "firstName": "Griffin",
-      "lastName": "Braun",
+      "name": "Griffin Braun",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "lgronaverp@cornell.edu",
@@ -236,8 +210,7 @@
     },
     {
       "id": 27,
-      "firstName": "Piper",
-      "lastName": "Schowalter",
+      "name": "Piper Schowalter",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "fokillq@amazon.co.jp",
@@ -245,8 +218,7 @@
     },
     {
       "id": 28,
-      "firstName": "Kody",
-      "lastName": "Terry",
+      "name": "Kody Terry",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "xisherwoodr@ask.com",
@@ -254,8 +226,7 @@
     },
     {
       "id": 29,
-      "firstName": "Macy",
-      "lastName": "Greenfelder",
+      "name": "Macy Greenfelder",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "jissetts@hostgator.com",
@@ -263,8 +234,7 @@
     },
     {
       "id": 30,
-      "firstName": "Maurine",
-      "lastName": "Stracke",
+      "name": "Maurine Stracke",
       "avatar": "https://robohash.org/TerryMedhurst",
       "address": "Санкт-Петербург ул. Саловая д.4 кв 23",
       "email": "kdulyt@umich.edu",

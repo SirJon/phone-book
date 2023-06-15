@@ -13,8 +13,13 @@ export const UsersAPIService = {
     const response = await axios.get(`/${ENDPOINTS.USERS}`);
     return JSON.parse(response.data);
   },
+  
+  findOne: async (id) => {
+    const response = await axios.get(`/${ENDPOINTS.USERS}/${id}`);
+    return JSON.parse(response.data);
+  },
 
-  create: async ({ data }) => {
+  create: async (data) => {
     const response = await axios.post(
       `/${ENDPOINTS.USERS}`,
       JSON.stringify(data)
@@ -22,7 +27,8 @@ export const UsersAPIService = {
     return JSON.parse(response.data);
   },
 
-  update: async ({ id, data }) => {
+  update: async (data) => {
+    const { id } = data;
     const response = await axios.put(
       `/${ENDPOINTS.USERS}/${id}`,
       JSON.stringify(data)
