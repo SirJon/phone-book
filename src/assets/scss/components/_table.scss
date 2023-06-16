@@ -27,6 +27,9 @@
     background: $white;
     cursor: pointer;
 
+    border-top: 1px solid rgb(205, 205, 242);
+    border-bottom: 1px solid rgb(205, 205, 242);
+
     &:nth-child(2n + 1) {
       background: rgb(246, 246, 255);
     };
