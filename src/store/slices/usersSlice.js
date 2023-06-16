@@ -4,18 +4,22 @@ import { API_STATUS } from '@/constants/api_status';
 import { UsersAPIService } from '@/services/UsersAPIService';
 
 const initialState = {
-  list: [],
   status: API_STATUS.PENDING,
   errors: null,
   sort: '',
+  currentPage: 1,
+  fetching: true,
+  totalCount: 1,
+  list: [],
 };
 
 const nameSlice = 'users';
 
 export const fetchUsersFind = createAsyncThunk(
   'users/fetchUsersFind',
-  async () => {
-    const response = await UsersAPIService.find();
+  async (_, thunkAPI) => {
+    const { user: { currentPage } } = thunkAPI.getState();
+    const response = await UsersAPIService.find(currentPage);
     return response;
   }
 );
@@ -43,6 +47,9 @@ export const usersSlice = createSlice({
     setSort: (state, { payload }) => {
       state.sort = payload;
     },
+    setFetching: (state, { payload }) => {
+      state.fetching = payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -54,10 +61,14 @@ export const usersSlice = createSlice({
         state.list = state.list
           .concat(payload)
         state.status = API_STATUS.FULFILLED;
+        state.currentPage += 1;
+        state.fetching = false;
+        state.totalCount = payload.length;
       })
       .addCase(fetchUsersFind.rejected, (state, { payload }) => {
         state.status = API_STATUS.REJECTED;
         state.errors = payload;
+        state.fetching = false;
       })
 
       .addCase(fetchUserEdit.fulfilled, (state, { payload }) => {
@@ -75,6 +86,9 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { setSort } = usersSlice.actions;
+export const {
+  setSort,
+  setFetching,
+} = usersSlice.actions;
 
 export default usersSlice.reducer;

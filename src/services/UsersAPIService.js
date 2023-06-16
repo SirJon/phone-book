@@ -1,5 +1,5 @@
 import { Axios } from "axios";
-import { SERVER_HOST, ENDPOINTS } from "@/constants/api_endpoints";
+import { SERVER_HOST, ENDPOINTS, QUERY } from "@/constants/api_endpoints";
 
 const axios = new Axios({
   baseURL: SERVER_HOST,
@@ -9,8 +9,8 @@ const axios = new Axios({
 });
 
 export const UsersAPIService = {
-  find: async () => {
-    const response = await axios.get(`/${ENDPOINTS.USERS}`);
+  find: async (page) => {
+    const response = await axios.get(`/${ENDPOINTS.USERS}?_limit=${QUERY.LIMIT}&_page=${page}`);
     return JSON.parse(response.data);
   },
   

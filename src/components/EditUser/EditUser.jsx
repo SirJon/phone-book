@@ -34,24 +34,28 @@ const EditUser = (props) => {
           <input
             className="form__input"
             type="text"
+            placeholder='Имя'
             defaultValue={name}
             {...register('name', { required: true })}
           />
           <input
             className="form__input"
             type="text"
+            placeholder='Номер'
             defaultValue={phone}
             {...register('phone')}
           />
           <input
             className="form__input"
             type="text"
+            placeholder='Электронная почта'
             defaultValue={email}
             {...register('email')}
           />
           <input
             className="form__input"
             type="text"
+            placeholder='Адрес'
             defaultValue={address}
             {...register('address')}
           />
