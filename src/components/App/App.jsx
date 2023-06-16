@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { API_STATUS } from '@/constants/api_status';
-
 import { fetchUsersFind, setFetching } from "@/store/slices/usersSlice";
 
 import Table from "@/components/Table/Table";
@@ -10,7 +8,7 @@ import Header from "@/components/Layout/Header/Header";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { list, status, fetching, sort, totalCount } = useSelector(state => state.user);
+  const { list, fetching, sort, totalCount } = useSelector(state => state.user);
 
   useEffect(() => {
     if (fetching && totalCount > 0) {
@@ -21,20 +19,18 @@ const App = () => {
   const listSort = list
     .concat()
     .filter(it =>
-      String(it.id).includes(sort) ||
-      String(it.name).includes(sort) ||
-      String(it.address).includes(sort) ||
-      String(it.phone).replace(/ /g, '').includes(sort) ||
-      String(it.email).includes(sort)
+      String(it.id).toLowerCase().includes(sort.toLowerCase()) ||
+      String(it.name).toLowerCase().includes(sort.toLowerCase()) ||
+      String(it.address).toLowerCase().includes(sort.toLowerCase()) ||
+      String(it.phone).toLowerCase().replace(/ /g, '').includes(sort.toLowerCase()) ||
+      String(it.email).toLowerCase().includes(sort.toLowerCase())
     )
 
   return (
     <>
       <Header />
       <main className="main">
-        {listSort.length > 0 &&
-          <Table data={listSort} setFetching={() => dispatch(setFetching(true))} />
-        }
+        <Table data={listSort} setFetching={() => dispatch(setFetching(true))} />
       </main>
     </>
   )

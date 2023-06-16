@@ -78,8 +78,14 @@ const Menu = () => {
               handleClickOpenUser();
               handleClose();
             }}
-            className='menu__button menu__button--up bold'
+            className={clsx({
+              ["menu__button"]: true,
+              ["menu__button--up"]: true,
+              ["bold"]: true,
+              [" menu__button--activ"]: up,
+            })}
             onFocus={() => setUp(true)}
+            onBlur={() => setUp(false)}
             onMouseEnter={() => setUp(true)}
             onMouseLeave={() => setUp(false)}
           >
@@ -89,8 +95,14 @@ const Menu = () => {
             </span>
           </button>
           <button
-            className='menu__button menu__button--left bold'
+            className={clsx({
+              ["menu__button"]: true,
+              ["menu__button--left"]: true,
+              ["bold"]: true,
+              [" menu__button--activ"]: left,
+            })}
             onFocus={() => setLeft(true)}
+            onBlur={() => setLeft(false)}
             onMouseEnter={() => setLeft(true)}
             onMouseLeave={() => setLeft(false)}
           >
@@ -100,25 +112,37 @@ const Menu = () => {
             </span>
           </button>
           <button
-            className='menu__button menu__button--right bold'
-            onFocus={() => setRight(true)}
-            onMouseEnter={() => setRight(true)}
-            onMouseLeave={() => setRight(false)}
-          >
-            <span className='menu__span'>
-              <BackupIcon className='menu__svg' />
-              Экспортировать контакты
-            </span>
-          </button>
-          <button
-            className='menu__button menu__button--down bold'
+            className={clsx({
+              ["menu__button"]: true,
+              ["menu__button--down"]: true,
+              ["bold"]: true,
+              [" menu__button--activ"]: down,
+            })}
             onFocus={() => setDown(true)}
+            onBlur={() => setDown (false)}
             onMouseEnter={() => setDown(true)}
             onMouseLeave={() => setDown(false)}
           >
             <span className='menu__span'>
               <CreateIcon className='menu__svg' />
               Редкактировать список
+            </span>
+          </button>
+          <button
+            className={clsx({
+              ["menu__button"]: true,
+              ["menu__button--right"]: true,
+              ["bold"]: true,
+              [" menu__button--activ"]: right,
+            })}
+            onFocus={() => setRight(true)}
+            onBlur={() => setRight(false)}
+            onMouseEnter={() => setRight(true)}
+            onMouseLeave={() => setRight(false)}
+          >
+            <span className='menu__span'>
+              <BackupIcon className='menu__svg' />
+              Экспортировать контакты
             </span>
           </button>
         </DialogContent>
