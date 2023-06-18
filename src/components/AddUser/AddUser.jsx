@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchUserCreate } from '@/store/slices/usersSlice';
+import { fetchUserCreate, userCreate } from '@/store/slices/usersSlice';
 
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
@@ -10,14 +10,30 @@ import avatar from "@/assets/images/avatar.jpg"
 
 const AddUser = ({ open, handleClose }) => {
   const dispatch = useDispatch();
+  const { local } = useSelector(state => state.user);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    dispatch(fetchUserCreate({
-      ...data,
-      avatar,
-    }))
-      .then(() => handleClose())
+    const { address, email, name, phone } = data;
+    if (!local) {
+      dispatch(fetchUserCreate({
+        address,
+        email,
+        name,
+        phone,
+        avatar,
+      }))
+        .then(() => handleClose())
+    } else {
+      dispatch(userCreate({
+        address,
+        email,
+        name,
+        phone,
+        avatar,
+      }));
+      handleClose();
+    };
   };
 
   return (

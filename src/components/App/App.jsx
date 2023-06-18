@@ -8,10 +8,10 @@ import Header from "@/components/Layout/Header/Header";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { list, fetching, sort, totalCount } = useSelector(state => state.user);
+  const { list, fetching, sort, totalCount, local } = useSelector(state => state.user);
 
   useEffect(() => {
-    if (fetching && totalCount > 0) {
+    if (fetching && (totalCount > 0) && !local) {
       dispatch(fetchUsersFind());
     };
   }, [fetching]);

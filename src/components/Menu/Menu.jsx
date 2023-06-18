@@ -1,14 +1,17 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { downloadList } from '@/store/slices/usersSlice';
 
 import AddUser from '@/components/AddUser/AddUser';
+import Save from "@/components/Save/Save";
+import Download from "@/components/Download/Download";
 
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import CreateIcon from '@mui/icons-material/Create';
-import BackupIcon from '@mui/icons-material/Backup';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
@@ -16,6 +19,13 @@ const Menu = () => {
   const [down, setDown] = useState(false);
   const [left, setLeft] = useState(false);
   const [right, setRight] = useState(false);
+
+  const { list } = useSelector(state => state.user);
+  const dispatch = useDispatch();
+
+  const handlerLoadList = (data) => {
+    dispatch(downloadList(data));
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -94,23 +104,13 @@ const Menu = () => {
               Добавить пользователя
             </span>
           </button>
-          <button
-            className={clsx({
-              ["menu__button"]: true,
-              ["menu__button--left"]: true,
-              ["bold"]: true,
-              [" menu__button--activ"]: left,
-            })}
-            onFocus={() => setLeft(true)}
-            onBlur={() => setLeft(false)}
-            onMouseEnter={() => setLeft(true)}
-            onMouseLeave={() => setLeft(false)}
-          >
-            <span className='menu__span'>
-              <CloudDownloadIcon className='menu__svg' />
-              Импортировать контакты
-            </span>
-          </button>
+          <Download 
+            setValue={setLeft}
+            value={left}
+            className={"menu__button--left"}
+            onClick={handleClose}
+            handlerLoadList={handlerLoadList}
+          />
           <button
             className={clsx({
               ["menu__button"]: true,
@@ -119,7 +119,7 @@ const Menu = () => {
               [" menu__button--activ"]: down,
             })}
             onFocus={() => setDown(true)}
-            onBlur={() => setDown (false)}
+            onBlur={() => setDown(false)}
             onMouseEnter={() => setDown(true)}
             onMouseLeave={() => setDown(false)}
           >
@@ -128,23 +128,13 @@ const Menu = () => {
               Редкактировать список
             </span>
           </button>
-          <button
-            className={clsx({
-              ["menu__button"]: true,
-              ["menu__button--right"]: true,
-              ["bold"]: true,
-              [" menu__button--activ"]: right,
-            })}
-            onFocus={() => setRight(true)}
-            onBlur={() => setRight(false)}
-            onMouseEnter={() => setRight(true)}
-            onMouseLeave={() => setRight(false)}
-          >
-            <span className='menu__span'>
-              <BackupIcon className='menu__svg' />
-              Экспортировать контакты
-            </span>
-          </button>
+          <Save
+            data={list}
+            setValue={setRight}
+            value={right}
+            className={"menu__button--right"}
+            onClick={handleClose}
+          />
         </DialogContent>
       </Dialog>
       <AddUser open={openUser} handleClose={handleCloseUser} />

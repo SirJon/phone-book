@@ -11,6 +11,7 @@ const initialState = {
   fetching: true,
   totalCount: 1,
   list: [],
+  local: false,
 };
 
 const nameSlice = 'users';
@@ -50,6 +51,20 @@ export const usersSlice = createSlice({
     setFetching: (state, { payload }) => {
       state.fetching = payload;
     },
+    downloadList: (state, { payload }) => {
+      state.list = payload;
+      state.local = true;
+    },
+    userEdit: (state, { payload }) => {
+      state.list = state.list.map(it => {
+        if (it.id === payload.id) return payload
+        return it
+      });
+    },
+    userCreate: (state, { payload }) => {
+      const length = state.list.length;
+      state.list.push({ ...payload, id: length + 1 });
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -72,6 +87,7 @@ export const usersSlice = createSlice({
       })
 
       .addCase(fetchUserEdit.fulfilled, (state, { payload }) => {
+        console.log(payload)
         state.list = state.list
           .map(it => {
             if (it.id === payload.id) return payload
@@ -89,6 +105,9 @@ export const usersSlice = createSlice({
 export const {
   setSort,
   setFetching,
+  downloadList,
+  userEdit,
+  userCreate,
 } = usersSlice.actions;
 
 export default usersSlice.reducer;

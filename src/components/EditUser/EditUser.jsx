@@ -1,22 +1,40 @@
 import { useForm } from "react-hook-form";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchUserEdit } from '@/store/slices/usersSlice';
+import { fetchUserEdit, userEdit } from '@/store/slices/usersSlice';
 
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 
 const EditUser = (props) => {
-  const { name, phone, avatar, address, email, handleClose, open } = props;
+  const { id, name, phone, avatar, address, email, handleClose, open } = props;
+  const { local } = useSelector(state => state.user);
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    dispatch(fetchUserEdit({
-      ...props,
-      ...data,
-    }))
-      .then(() => handleClose())
+    const { address: addressData, email: emailData, name: nameData, phone: phoneData } = data;
+    if (!local) {
+      dispatch(fetchUserEdit({
+        id,
+        name: nameData,
+        avatar,
+        address: addressData,
+        email: emailData,
+        phone: phoneData,
+      }))
+        .then(() => handleClose())
+    } else {
+      dispatch(userEdit({
+        id,
+        name: nameData,
+        avatar,
+        address: addressData,
+        email: emailData,
+        phone: phoneData,
+      }));
+      handleClose();
+    };
   };
   return (
     <Dialog
