@@ -87,7 +87,6 @@ export const usersSlice = createSlice({
       })
 
       .addCase(fetchUserEdit.fulfilled, (state, { payload }) => {
-        console.log(payload)
         state.list = state.list
           .map(it => {
             if (it.id === payload.id) return payload
